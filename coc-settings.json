@@ -1,0 +1,16 @@
+{
+    "diagnostic.errorSign": "✖",
+    "diagnostic.warningSign": "⚠",
+    "diagnostic.infoSign": "ℹ",
+    "diagnostic.hintSign": "➤",
+    "suggest.noselect": false,
+    "suggest.echodocSupport": true,
+    "codeLens.enable": true,
+    "signature.enable": true,
+    "suggest.preferCompleteThanJumpPlaceholder": true,
+    "coc.preferences.rootPatterns": ["app.py", ".hg", ".projections.json"],
+    "python.linting.mypyEnabled": true,
+    "tsserver.tsdk": ".yarn/sdks/typescript/lib",
+    "eslint.nodePath": ".yarn/sdks",
+    "eslint.packageManager": "yarn"
+}
