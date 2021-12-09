@@ -10,10 +10,13 @@ Plug 'vim-airline/vim-airline-themes'
 
 " NerdTree
 Plug 'preservim/nerdtree' 
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Python
-" coc-python 
+" coc 
 Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc-highlight'
 
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -30,6 +33,12 @@ Plug 'vim-test/vim-test'
 
 " Commentary
 Plug 'tpope/vim-commentary'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+
+" Linter
+Plug 'prettier/vim-prettier'
 
 "-------------
 " Plugin end
@@ -48,6 +57,8 @@ syntax on
 set number
 set hidden
 
+set guifont=Hack\ Nerd\ Font\ Mono:h11
+
 
 " Tab
 set tabstop=4
@@ -55,6 +66,8 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+" encoding
+set encoding=utf8
 
 " Buffer
 " move to next buffer 
@@ -69,6 +82,7 @@ nmap <leader>bl :ls<CR>
 
 " Airline
 let g:airline_theme = 'base16_gruvbox_dark_hard'
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -77,6 +91,20 @@ let g:airline#extensions#tabline#buffer_nr_format = '%s:'
 
 " NerdTree
 nmap <leader>n :NERDTreeToggle<CR>
+
+" NerdTree Git Plugin
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
 
 
 " COC
@@ -136,10 +164,5 @@ command! -bang -nargs=? -complete=dir Files
 map <leader>F :Files<CR>
 map <leader>R :Rg<CR>
 
-
-"Test
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
+" Prettier
+map <leader>s :Prettier<CR>
