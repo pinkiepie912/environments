@@ -14,7 +14,7 @@
   color: "aff1e4"
   aliases: []
 - name: lint 
-  color: "c0f1af"
+  color: "3fc456"
   aliases: []
 - name: refactor 
   color: "eea4f3"
